@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  fribraryapi:
+    image: fribraryapi
+    build:
+      context: ./FribraryApi
+      dockerfile: Dockerfile
