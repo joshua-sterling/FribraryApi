@@ -12,6 +12,17 @@ namespace FribraryAPI.EntityFramework
 
         public FribraryApiContext() { }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Song>()
+                .HasOne(s => s.Artist)
+                .WithMany(a => a.Songs)
+                .IsRequired();
+        }
+
+        
+
         public DbSet<Song> Songs { get; set; }
+        public DbSet<Artist> Artists { get; set; }
     }
 }

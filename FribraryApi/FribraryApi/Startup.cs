@@ -6,6 +6,7 @@ using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.EntityFrameworkCore;
 using FribraryAPI.EntityFramework;
 using FribraryApi.Services;
+using AutoMapper;
 
 namespace FribraryApi
 {
@@ -20,8 +21,9 @@ namespace FribraryApi
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        {           
             services.AddMvc();
+            services.AddAutoMapper();
             services.AddSwaggerGen(options => options.SwaggerDoc("v1", new Info { Title = "Fribrary API", Version = "v1" }));
             services.AddDbContext<FribraryApiContext>(options => options.UseSqlite("Data Source = FribrarySongs.db"));
             services.AddFribaryApiServices();
@@ -40,6 +42,13 @@ namespace FribraryApi
             }
 
             app.UseMvc();
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<FribraryApiContext>();
+                context.Database.Migrate();
+            }
+
         }
     }
 }
