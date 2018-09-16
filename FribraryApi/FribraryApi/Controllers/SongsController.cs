@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using FribraryApi.Models;
 using FribraryApi.Services;
+using FribraryAPI.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -62,8 +63,12 @@ namespace FribraryApi.Controllers
         
         // POST: api/Songs
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post(SongPostModel model)
         {
+            var mapped = _mapper.Map<Song>(model);
+            _songService.Post(mapped);
+
+            return Ok();
         }
         
         // PUT: api/Songs/5

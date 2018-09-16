@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FribraryApi.Services.Generic
+namespace FribraryApi.Services.Generic.Impl
 {
     public abstract class ReadOnly<T> : IReadOnly<T> where T : class
     {
@@ -16,7 +16,7 @@ namespace FribraryApi.Services.Generic
             _context = context;
         }
 
-        public IQueryable<T> GetAll() {
+        public virtual IQueryable<T> GetAll() {
 
             return _context.Set<T>();
         }

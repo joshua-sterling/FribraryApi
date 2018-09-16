@@ -42,6 +42,13 @@ namespace FribraryApi
             }
 
             app.UseMvc();
+
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var context = serviceScope.ServiceProvider.GetRequiredService<FribraryApiContext>();
+                context.Database.Migrate();
+            }
+
         }
     }
 }

@@ -7,7 +7,7 @@ namespace FribraryAPI.EntityFramework.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Artist",
+                name: "Artists",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
@@ -16,7 +16,7 @@ namespace FribraryAPI.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Artist", x => x.Id);
+                    table.PrimaryKey("PK_Artists", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -26,17 +26,17 @@ namespace FribraryAPI.EntityFramework.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(nullable: true),
-                    ArtistId = table.Column<int>(nullable: true)
+                    ArtistId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Songs", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Songs_Artist_ArtistId",
+                        name: "FK_Songs_Artists_ArtistId",
                         column: x => x.ArtistId,
-                        principalTable: "Artist",
+                        principalTable: "Artists",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -51,7 +51,7 @@ namespace FribraryAPI.EntityFramework.Migrations
                 name: "Songs");
 
             migrationBuilder.DropTable(
-                name: "Artist");
+                name: "Artists");
         }
     }
 }

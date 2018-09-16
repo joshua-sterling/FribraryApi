@@ -6,7 +6,7 @@ using System.Text;
 
 namespace FribraryApi.Services
 {
-    public interface ISongsService : IReadOnly<Song>
+    public interface ISongsService : IReadWrite<Song>
     {
     }
 }

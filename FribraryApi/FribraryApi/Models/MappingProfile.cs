@@ -13,6 +13,10 @@ namespace FribraryApi.Models
         {
             CreateMap<Song, SongViewModel>();
             CreateMap<Artist, ArtistViewModel>();
+            CreateMap<SongPostModel, Song>()
+                .ForMember(x => x.Id, opt => opt.Ignore());
+            CreateMap<ArtistPostModel, Artist>()
+                .ForMember(x => x.Id, opt => opt.Ignore());
         }
     }
 }
