@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace FribraryAPI.Models
+namespace FribraryApi.Models
 {
-    public class Artist
+    public class ArtistViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

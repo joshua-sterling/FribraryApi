@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 using Microsoft.EntityFrameworkCore;
 using FribraryAPI.EntityFramework;
+using FribraryApi.Services;
 
 namespace FribraryApi
 {
@@ -23,6 +24,7 @@ namespace FribraryApi
             services.AddMvc();
             services.AddSwaggerGen(options => options.SwaggerDoc("v1", new Info { Title = "Fribrary API", Version = "v1" }));
             services.AddDbContext<FribraryApiContext>(options => options.UseSqlite("Data Source = FribrarySongs.db"));
+            services.AddFribaryApiServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

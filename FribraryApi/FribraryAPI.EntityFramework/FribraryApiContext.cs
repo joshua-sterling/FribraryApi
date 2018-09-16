@@ -10,6 +10,8 @@ namespace FribraryAPI.EntityFramework
 
         }
 
-        public DbSet<Artist> Artists { get; set; }
+        public FribraryApiContext() { }
+
+        public DbSet<Song> Songs { get; set; }
     }
 }

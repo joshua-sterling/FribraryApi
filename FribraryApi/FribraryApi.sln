@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FribraryApi", "FribraryApi\FribraryApi.csproj", "{A6F19E0C-EC82-4A70-A818-732C3DE1258E}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A8BEAAD4-F6DE-4A09-A2CB-F8004196FED0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FribraryAPI.Models", "FribraryAPI.Models\FribraryAPI.Models.csproj", "{0447422B-7972-44E9-B3D9-C6CAB75750CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FribraryAPI.Models", "FribraryAPI.Models\FribraryAPI.Models.csproj", "{0447422B-7972-44E9-B3D9-C6CAB75750CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FribraryAPI.EntityFramework", "FribraryAPI.EntityFramework\FribraryAPI.EntityFramework.csproj", "{E1A445FC-8093-48D5-A793-323B7EE0813B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FribraryApi.Services", "FribraryApi.Services\FribraryApi.Services.csproj", "{05AD8376-A322-4CD8-BFD3-E280D84B40DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +21,6 @@ Global
 		{A6F19E0C-EC82-4A70-A818-732C3DE1258E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6F19E0C-EC82-4A70-A818-732C3DE1258E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6F19E0C-EC82-4A70-A818-732C3DE1258E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8BEAAD4-F6DE-4A09-A2CB-F8004196FED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8BEAAD4-F6DE-4A09-A2CB-F8004196FED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8BEAAD4-F6DE-4A09-A2CB-F8004196FED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8BEAAD4-F6DE-4A09-A2CB-F8004196FED0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0447422B-7972-44E9-B3D9-C6CAB75750CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0447422B-7972-44E9-B3D9-C6CAB75750CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0447422B-7972-44E9-B3D9-C6CAB75750CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{E1A445FC-8093-48D5-A793-323B7EE0813B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1A445FC-8093-48D5-A793-323B7EE0813B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1A445FC-8093-48D5-A793-323B7EE0813B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05AD8376-A322-4CD8-BFD3-E280D84B40DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05AD8376-A322-4CD8-BFD3-E280D84B40DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05AD8376-A322-4CD8-BFD3-E280D84B40DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05AD8376-A322-4CD8-BFD3-E280D84B40DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
